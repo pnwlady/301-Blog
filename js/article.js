@@ -16,15 +16,17 @@ Article.prototype.toHTML = function () {
 
   //select template element
   var $temp1 = $('#template').clone();
+  console.log($temp1 + '$');
   //clone the element
   $temp1.find('.title').html(this.title);
   //change the author info
   $temp1.find('.author').html(this.author);
+  console.log(this.author + "$$");
   $temp1.find('.authorUrl').html(this.authorUrl);
   //change body
   $temp1.find('.body').html(this.body);
   //change publishedOn
-  $temp1.find('.publishedOn').html.(this.publishedOn);
+  $temp1.find('.publishedOn').html(this.publishedOn);
   //append back to html page
-  
+  $('main').append($temp1);
 }

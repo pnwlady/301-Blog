@@ -1,25 +1,6 @@
-for (var i = 0; i < blog.rawData.length; i++) {
+for (var i = 0; i < blog.rawData.length; i += 1) {
   var article = new Article(blog.rawData[i]);
-  console.log(blog.articles.push(article));
+  blog.articles.push(article);
+  article.toHTML();
+  console.log(blog.rawData.length);
 }
-
-// var template = function() {
-//   $('#template').html();
-//   $('.title').html();
-//   $('.author').html();
-//   $('.authorUrl').html();
-//   $('.category').html();
-//   $('.body').html();
-//   $('.publishedOn').html();
-// }
-//
-// template();
-// console.log(blog.rawData);
-//
-// var $clonedArticle = $('#template').clone();
-//
-// $clonedArticle.find('.title').html();
-//
-// $(function() {
-//   $().html().clone().appendTo();
-// });
