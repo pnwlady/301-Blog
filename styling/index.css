@@ -1,0 +1,10 @@
+html {
+  word-wrap: break-word;
+  text-align: left;
+}
+
+section img {
+  width: 5em;
+  height: 5em;
+  float: left;
+}
