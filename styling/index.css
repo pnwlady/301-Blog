@@ -1,9 +1,10 @@
 html {
   word-wrap: break-word;
   text-align: left;
-};
+}
 
-img {
-  width: 100px;
-  height: 100px;
-};
+section img {
+  width: 5em;
+  height: 5em;
+  float: left;
+}
