@@ -18,11 +18,17 @@ Article.prototype.toHTML = function () {
   //change body
   $temp1.find('.body').html(this.body);
   //change publishedOn
-  $temp1.find('.publishedOn').html(this.publishedOn);
+  $temp1.find('.publishedOn').html(this.getDate());
   //remove repeats of template - don't know if it's working
   $temp1.removeAttr('id');
+
+  var string = ('<option>' + this.author + '</option>');
+  $('#dropdown').append(string);
   //append back to html page
   $('main').append($temp1);
 };
 
-//am I adding code in index.js to name blog function shown in class (don't leave it floating)
+Article.prototype.getDate = function () {
+  var returnDate = (Math.floor(new Date - new Date (this.publishedOn))/86400000 + ' days ago');
+  return returnDate;
+};

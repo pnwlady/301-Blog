@@ -1,6 +1,6 @@
 //truncate articles to hide all but first paragraph
 blog.truncateArticles = function() {
-  $('body p:not(:first-child').hide();
+  $('article p:not(:first-child').hide();
   //create event handler
   $('main').on('click', '.read-on', function(event) {
     event.preventDefault();
