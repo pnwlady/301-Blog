@@ -21,10 +21,3 @@ blog.createArticles = function() {
     article.toHTML();
   }
 };
-
-// blog.createArticles = funtion() {
-//   for (var i = 0; i < blog.rawData.length; i++) {
-//     var temp = new Article (blog.rawData[i]);
-//     temp.toHTML();
-//   }
-// }
