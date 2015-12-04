@@ -51,7 +51,7 @@ blog.getAuthList = function() {
       $('.$selAuth').show();
     });
   });
-}
+};
 
 blog.getCatList = function() {
   $('.category').change( function() {
