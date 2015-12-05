@@ -34,8 +34,7 @@ blog.truncateArticles = function() {
 };
 
 blog.getAuthList = function() {
-  //populating the dropdown menu
-
+  //populating the dropdown menu in article.js 
 };
 
 // blog.getCatList = function() {

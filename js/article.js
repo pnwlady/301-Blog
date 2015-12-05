@@ -21,9 +21,12 @@ Article.prototype.toHTML = function () {
   $temp1.find('.publishedOn').html(this.getDate());
   //remove repeats of template - don't know if it's working
   $temp1.removeAttr('id');
-
-  var string = ('<option>' + this.author + '</option>');
-  $('#dropdown').append(string);
+  //populating the .catFilter dropdown
+  var string2 = ('<option>' + this.category + '</option>');
+  $('.catFilter').append(string2);
+  //populating the .autFilter dropdown
+  var string1 = ('<option>' + this.author + '</option>');
+  $('.autFilter').append(string1);
   //append back to html page
   $('main').append($temp1);
 };
