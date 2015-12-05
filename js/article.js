@@ -30,6 +30,5 @@ Article.prototype.toHTML = function () {
 
 Article.prototype.getDate = function () {
   var date = ((Date.parse(new Date()) - Date.parse(this.publishedOn)) / 86400000 );
-  console.log(date);
   return Math.floor(date) + ' days ago';
 };
