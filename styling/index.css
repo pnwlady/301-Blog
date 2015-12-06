@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald);
+@media all and (min-width: 800px) and (max-width: 1024px) {...}
 
 body {
   text-decoration-color: #333300;
@@ -7,21 +8,22 @@ body {
   word-wrap: break-word;
   text-align: left;
   padding: 10em;
+}
 
 #page {
   background-color: #403c3b;
   margin: 0 auto 0 auto;
   position: relative;
   text-align: center;}
-  /* Responsive page rules at bottom of style sheet */
+}
 
-/*#dropdown {
+#dropdown {
   background-color: #66ccff;
   margin: 0 auto 0 auto;
   padding: 2em;
   position: relative;
   text-align: center;}
-}*/
+}
 
 h1 {
   background-position: center center;
