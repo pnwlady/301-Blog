@@ -34,19 +34,19 @@ blog.truncateArticles = function() {
 };
 
 blog.getAuthList = function() {
-  //populating the dropdown menu in article.js 
+  //populating the dropdown menu in article.js
 };
 
-// blog.getCatList = function() {
-//   $('.category').change( function() {
-//     //:selected filters elements in #category that were selected- find looks for decendants
-//     var $selCat = $('.category').find(':selected').text(category[i]);
-//     $('.autFilter').append('<option>' + this.category + '</options>');
-//     // $('article').hide();
-//     //making two selectors to show articles with both classes. not either or
-//     //our assignment was to make one show and clear the other
-//     //remove author and it would work for the assignment
-//     // $('.'+ $selCat + '.' + $selAuth).show();
-//     $('.$selCat').show();
-//   });
-// };
+blog.getCatList = function() {
+  $('#category').change( function() {
+    //:selected filters elements in #category that were selected- find looks for decendants
+    var $selCat = $('.category').find(':selected').text(category[i]);
+    $('.autFilter').append('<option>' + this.category + '</options>');
+    $('article').hide();
+    //making two selectors to show articles with both classes. not either or
+    //our assignment was to make one show and clear the other
+    //remove author and it would work for the assignment
+    // $('.'+ $selCat + '.' + $selAuth).show();
+    $('.$selCat').show();
+  });
+};
