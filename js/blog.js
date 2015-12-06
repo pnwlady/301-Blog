@@ -34,16 +34,27 @@ blog.truncateArticles = function() {
   });
 };
 
+//create author list dropdown helped by Tiffine and Robert
+blog.getAuthList = function(array, prop) {
+  for (var i = 0; i < blog.rawData.length; i += 1) {
+    var x = this.rawData[i][prop];
+    if (array.indexOf(x) === -1) {
+      array.push(z);
+    }
+  }
+};
 //create author filter jQuery object ... worked with Tiffine and Robert
 //2nd try was assisted by reviewing Dave's code in class
 blog.filterAut = function() {
-  $('.autFilter').change(funtion() {
+  var string1 = ('<option>' + this.author + '</option>');
+  $('.autFilter').append(string1);
+  $('.autFilter').change(function() {
     $('#category').find('option:first').attr('selected', true);
     $('main').find('article').show();
     console.log($this.val());
     if ($(this).val() !== 'none') {
       $('.this.author:not(:contains(' + $(this).val() + '))').parent().hide();
-    }
+    };
   });
 };
 //create category filter jQuery object
@@ -51,9 +62,8 @@ blog.filterAut = function() {
 
 //
 //   //populating the .autFilter dropdown
-//   var string1 = ('<option>' + this.author + '</option>');
-//   $('.autFilter').append(string1);
-// };
+  // var string1 = ('<option>' + this.author + '</option>');
+  // $('.autFilter').append(string1);
 //
 // blog.getCatList = function() {
 //   $('#category').change( function() {
