@@ -4,17 +4,26 @@
     <title>301-Blog</title>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styling/index.css"></script>
+    <link rel="stylesheet" type="text/css" href="styling/skeleton.css"></script>
+    <link rel="stylesheet" type="text/css" href="styling/normalize.css"></script>
   </head>
 
   <body>
     <header>
       <h1>Heidi's Blog</h1>
-      <nav id="">
+      <nav id="navBar">
         <ul>
-          <li><a href="http://github.com/pnwlady">github</a></li>
-          <li>linkedin</li>
-          <li>twitter</li>
+          <li><a href="http://about.me/heidilaursen">About Me</a></li>
+          <li><a href="http://github.com/pnwlady">Github/pnwlady</a></li>
+          <li><a href="http://www.linkedin.com/in/heidi-laursen-33997b91">Linked In</a></li>
+          <li><a href="https://twitter.com/pnwlady">Twitter/pnwlady</a></li>
         </ul>
+        <form id="dropdown">
+          <select class="catFilter" id="select-hold">Choose a category</select>
+          <option id="category"></option>
+          <select class="autFilter" id="select-hold">Choose an author</select>
+          <option id="authors"></option>
+        </form>
       </nav>
     </header>
 
@@ -24,8 +33,8 @@
         <h3 class="author"></h3>
         <h3 class="authorUrl"></h3>
         <section class="body"></section>
-        <h6 class="category"></h6>
-        <h4 class="publishedOn"></h4>
+        <a href="#" class="read-on">Read On</a>
+        <h6 class="publishedOn"></h6>
       </article>
     </main>
 
@@ -35,5 +44,7 @@
   <script src="js/blogArticles.js"></script>
   <script src="js/article.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/tabs.js"></script>
 </body>
 </html>
