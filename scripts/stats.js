@@ -4,8 +4,7 @@ var stats = {};
 $.get('js/blogArticles.js', function(data) {
   stats.data = data;
 })
-
-
+//
 // stats.getAuthors = function(num)
 //
 // //use code from jonathan's example in class
