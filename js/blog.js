@@ -62,8 +62,9 @@ blog.filterAut = function() {
 
 //
 //   //populating the .autFilter dropdown
-  // var string1 = ('<option>' + this.author + '</option>');
-  // $('.autFilter').append(string1);
+  var string1 = ('<option>' + this.author + '</option>');
+  $('.autFilter').append(string1);
+
 //
 // blog.getCatList = function() {
 //   $('#category').change( function() {
