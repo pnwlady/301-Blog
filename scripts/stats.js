@@ -1,9 +1,15 @@
 //create  stat object
 var stats = {};
 
-$.get('js/blogArticles.js', function(data) {
+//getting data from blogArticles
+$.get('scripts/blogArticles.js', function(data) {
   stats.data = data;
-})
+});
+
+//getting datat from hackerIpsum
+$.get('scripts/hackerIpsum.json', function(data) {
+  stats.data = data;
+});
 //
 // stats.getAuthors = function(num)
 //
