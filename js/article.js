@@ -22,11 +22,11 @@ Article.prototype.toHTML = function () {
   //remove repeats of template - don't know if it's working
   $temp1.removeAttr('id');
   //populating the .catFilter dropdown
-  var string2 = ('<option>' + this.category + '</option>');
-  $('.catFilter').append(string2);
-  //populating the .autFilter dropdown
-  var string1 = ('<option>' + this.author + '</option>');
-  $('.autFilter').append(string1);
+  // var string2 = ('<option>' + this.category + '</option>');
+  // $('.catFilter').append(string2);
+  // //populating the .autFilter dropdown
+  // var string1 = ('<option>' + this.author + '</option>');
+  // $('.autFilter').append(string1);
   //append back to html page
   $('main').append($temp1);
 };

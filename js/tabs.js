@@ -1,6 +1,6 @@
 // var bio = {};
 //document ready abbrv. to make sure all the docs are loaded in the DOM before running this code
-
+// 
 // $(function() {
 //   //select id element of bio and hide it
 //   // $('#bio').hide();
