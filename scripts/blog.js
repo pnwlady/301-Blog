@@ -48,7 +48,7 @@ blog.createList = function() {
 
 //pair programmed with Robert Hill
 blog.filterAuthList = function(){
-  $('#authDropDown').on('change', function() {
+  $('#authors').on('change', function() {
     $('main').find('article').attr('selected', true);
     if($(this).val() !== 'none') {
       $('main').find('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
