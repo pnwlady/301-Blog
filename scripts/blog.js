@@ -35,49 +35,45 @@ blog.truncateArticles = function() {
 };
 
 //create author list dropdown helped by Tiffine and Robert
-blog.getAuthList = function(array, prop) {
-  for (var i = 0; i < blog.rawData.length; i += 1) {
-    var x = this.rawData[i][prop];
-    if (array.indexOf(x) === -1) {
-      array.push(z);
+blog.createList = function() {
+  $('article').each(function() {
+    var list = $(this).find('.authors').text();
+    var option = ('<option value="' + val + '">' + val + '</option>');
+    $('#authors').append(option);
+
+    list = $(this).find('.category').text();
+    option = '<option value="' + val + '">' + val + '</option>';
+    $('#catetory').append(option);
+});
+
+//pair programmed with Robert Hill
+blog.filterAuthList = function(){
+  $('#authDropDown').on('change', function() {
+    $('main').find('article').attr('selected', true);
+    if($(this).val() !== 'none') {
+      $('main').find('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
+    } else {
+      $('main').find('article').show();
+      console.log(this.value);
     }
-  }
-};
-//create author filter jQuery object ... worked with Tiffine and Robert
-//2nd try was assisted by reviewing Dave's code in class
-blog.filterAut = function() {
-  var string1 = ('<option>' + this.author + '</option>');
-  $('.autFilter').append(string1);
-  $('.autFilter').change(function() {
-    $('#category').find('option:first').attr('selected', true);
-    $('main').find('article').show();
-    console.log($this.val());
-    if ($(this).val() !== 'none') {
-      $('.this.author:not(:contains(' + $(this).val() + '))').parent().hide();
-    };
+    $('#category').val('');
   });
 };
-//create category filter jQuery object
-
-
-//
-//   //populating the .autFilter dropdown
-  var string1 = ('<option>' + this.author + '</option>');
-  $('.autFilter').append(string1);
-
-//
-// blog.getCatList = function() {
-//   $('#category').change( function() {
-//     var string2 = ('<option>' + this.category + '</option>');
-//     $('.catFilter').append(string2);
-//     //:selected filters elements in #category that were selected- find looks for decendants
-//     var $selCat = $('.category').find(':selected').text(category[i]);
-//     $('.autFilter').append('<option>' + this.category + '</options>');
-//     $('article').hide();
-//     //making two selectors to show articles with both classes. not either or
-//     //our assignment was to make one show and clear the other
-//     //remove author and it would work for the assignment
-//     // $('.'+ $selCat + '.' + $selAuth).show();
-//     $('.$selCat').show();
-//   });
-// };
+blog.filterCatList = function(){
+  $('#catetory').on('change', function() {
+    $('main').find('article').attr('selected', true);
+    if($(this).val() !== 'none') {
+      $('main').find('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
+    } else {
+      $('main').find('article').show();
+      console.log(this.value);
+    }
+    $('#authors').val('');
+  });
+};
+//navigation control - needs work to be built here
+//JSON file
+blog.exportJSON = function() {
+  $('#export-field').show();
+  $('#article-json').val(JSON.stringify(blog.buildArticle()) + ',');
+};
