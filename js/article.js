@@ -3,7 +3,7 @@ var Article = function(property) {
   this.author = property.author;
   this.authorUrl = property.authorUrl;
   this.category = property.category;
-  this.body = property.body;
+  this.body = property.body; // || marked(this.markdown)
   this.publishedOn = property.publishedOn;
 };
 
