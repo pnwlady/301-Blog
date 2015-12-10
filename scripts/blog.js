@@ -46,6 +46,13 @@ blog.createList = function() {
     $('#catetory').append(option);
 });
 
+// //code from Seth
+// blog.newArticleLoop = function () {
+//   var newArticle = new Articles(this.rawData[i]);
+//   $('main').append(newArticle.toHTML()
+//   );
+// };
+
 //pair programmed with Robert Hill
 blog.filterAuthList = function(){
   $('#authors').on('change', function() {
