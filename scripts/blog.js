@@ -57,14 +57,14 @@ blog.createList = function() {
   $('article').each(function() {
     //draft code from class
     if (!$(this).hasClass('draft')) {
-      var list = $(this).find('.authors').text();
+      var list = $(this).find('address a').text();
       var option = ('<option value="' + val + '">' + val + '</option>');
       $('#authors').append(option);
 
       list = $(this).find('.category').text();
       option = '<option value="' + val + '">' + val + '</option>';
-      if ($('#category-filter option[value=' + val + ']').length === 0) {
-        $('#category-filter').append(option);
+      if ($('#category option[value=' + val + ']').length === 0) {
+        $('#category').append(option);
       }
     }
   });
