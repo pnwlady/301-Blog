@@ -45,10 +45,3 @@ Article.prototype.getDate = function () {
   var date = ((Date.parse(new Date()) - Date.parse(this.publishedOn)) / 86400000 );
   return Math.floor(date) + ' days ago';
 };
-
-//code from Seth
-blog.newArticleLoop = function () {
-  var newArticle = new Articles(this.rawData[i]);
-  $('main').append(newArticle.toHTML()
-  );
-};
