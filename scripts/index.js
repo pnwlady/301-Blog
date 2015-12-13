@@ -1,8 +1,10 @@
 $(function() {
   blog.createArticles();
-  blog.sortRawData();
+  blog.importArticles();
+  blog.sortArticles();
   //when page loads, hide the template
   $('#template').hide();
+  blog.appendArticle();
   //truncate
   blog.truncateArticles();
   blog.getAuthList();
