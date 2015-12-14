@@ -59,7 +59,7 @@ blog.createList = function() {
     if (!$(this).hasClass('draft')) {
       var list = $(this).find('address a').text();
       var option = ('<option value="' + val + '">' + val + '</option>');
-      $('#authors').append(option);
+      $('#autFilter').append(option);
 
       list = $(this).find('.category').text();
       option = '<option value="' + val + '">' + val + '</option>';
