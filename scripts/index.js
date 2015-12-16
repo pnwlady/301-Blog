@@ -1,7 +1,9 @@
 $(function() {
+  // blog.createArticles();
   blog.sortArticles();
   blog.importArticles();
   //when page loads, hide the template
+  // $('#template').hide();
   blog.appendArticles();
   //truncate
   blog.truncateArticles();

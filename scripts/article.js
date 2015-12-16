@@ -4,7 +4,7 @@ var Article = function(property) {
   this.authorUrl = property.authorUrl;
   this.category = property.category;
   this.daysAgo = property.daysAgo;
-  this.body = property.markdown; // || marked(this.markdown)
+  this.body = property.body || marked(this.markdown);
   this.publishedOn = property.publishedOn;
 };
 

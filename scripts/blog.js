@@ -19,7 +19,7 @@ blog.appendArticles = function() {
   this.articles.forEach(function(article){
     $('#articles').append(article.toHTML());
   });
-};
+
 
 //truncate articles to hide all but first paragraph work from Brook in class
 blog.truncateArticles = function() {
