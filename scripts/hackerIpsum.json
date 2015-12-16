@@ -1,4 +1,4 @@
-[
+blog.rawData = [
   {
     "title": "Transmitting Open-source Arrays",
     "category": "firewall",
