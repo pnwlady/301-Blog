@@ -1,5 +1,5 @@
 $(function() {
-  blog.createArticles();
+  // blog.createArticles();
   blog.importArticles();
   blog.appendArticles();
   blog.sortArticles();

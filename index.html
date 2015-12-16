@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>301-Blog</title>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"></script>
     <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
     <link rel="stylesheet" type="text/css" href="styling/index.css"></script>
@@ -36,25 +35,30 @@
           <li><a href="http://www.linkedin.com/in/heidi-laursen-33997b91">Linked In</a></li>
           <li><a href="https://twitter.com/pnwlady">Twitter/pnwlady</a></li>
         </ul>
-
-        <form id="filters">
-          <select id="catFilter">Choose a category
-            <option value=""></option></select>
-          <select id="autFilter">Choose an author
-            <option value=""></option></select>
-        </form>
       </nav>
+
     </header>
 
     <main>
+      <section id="articles">
+        <form id="filters">
+          <select id="catFilter">
+            <option value="">Choose a category</option>
+          </select>
+          <select id="autFilter">
+            <option value="">Choose an author</option>
+          </select>
+        </form>
+      </section>
       <article id="articles"></div>
       </article>
     </main>
 
   <footer>
+    <!-- footer borrowed from class code -->
     &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
   <script src="scripts/util.js"></script>
   <script src="scripts/article.js"></script>

@@ -8,14 +8,14 @@ blog.sortArticles = function() {
   });
 };
 
-//1st try
-blog.createArticles = function() {
-  for (var i = 0; i < blog.rawData.length; i += 1) {
-    var article = new Article(blog.rawData[i]);
-    blog.articles.push(article);
-    article.toHTML();
-  }
-};
+// //1st try
+// blog.createArticles = function() {
+//   for (var i = 0; i < blog.rawData.length; i += 1) {
+//     var article = new Article(blog.rawData[i]);
+//     blog.articles.push(article);
+//     article.toHTML();
+//   }
+// };
 
 blog.importArticles = function() {
   blog.rawData.forEach(function(ele) {
@@ -23,7 +23,7 @@ blog.importArticles = function() {
   });
 };
 
-blog.appendArticle = function(a) {
+blog.appendArticles = function(a) {
   $('#articles').append(a.toHtml());
 };
 

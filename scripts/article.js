@@ -4,7 +4,7 @@ var Article = function(property) {
   this.authorUrl = property.authorUrl;
   this.category = property.category;
   this.daysAgo = property.daysAgo;
-  this.body = property.markdown; // || marked(this.markdown)
+  this.body = property.body || marked(this.markdown);
   this.publishedOn = property.publishedOn;
 };
 
@@ -18,5 +18,4 @@ Article.prototype.toHTML = function () {
 Article.prototype.getDate = function () {
   var date = ((Date.parse(new Date()) - Date.parse(this.publishedOn)) / 86400000 );
   return Math.floor(date) + ' days ago';
-
 };
