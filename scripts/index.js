@@ -1,10 +1,10 @@
 $(function() {
   blog.createArticles();
-  // blog.importArticles();
+  blog.importArticles();
+  blog.appendArticles();
   blog.sortArticles();
   //when page loads, hide the template
   $('#template').hide();
-  blog.appendArticle();
   //truncate
   blog.truncateArticles();
   blog.populateFilters();

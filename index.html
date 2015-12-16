@@ -8,6 +8,7 @@
     <script href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"></script>
     <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
     <link rel="stylesheet" type="text/css" href="styling/index.css"></script>
+    <link rel="stylesheet" type="text/css" href="styling/icon.css"
     <link rel="stylesheet" type="text/css" href="styling/skeleton.css"></script>
 
     <script id="entry-template" type="text/x-handlebars-template">
@@ -28,6 +29,7 @@
     <header>
       <h1>Heidi's Blog</h1>
       <nav id="navBar">
+        <div class="icon-menu"></div>
         <ul>
           <li><a href="http://about.me/heidilaursen">About Me</a></li>
           <li><a href="http://github.com/pnwlady">Github/pnwlady</a></li>
@@ -35,17 +37,17 @@
           <li><a href="https://twitter.com/pnwlady">Twitter/pnwlady</a></li>
         </ul>
 
-        <form id="dropdown">
+        <form id="filters">
           <select id="catFilter">Choose a category
-            <option value="reset"></option></select>
+            <option value=""></option></select>
           <select id="autFilter">Choose an author
-            <option value="reset"></option></select=-09871` as 21`
+            <option value=""></option></select>
         </form>
       </nav>
     </header>
 
     <main>
-      <article class="articles"></div>
+      <article id="articles"></div>
       </article>
     </main>
 
