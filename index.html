@@ -10,8 +10,19 @@
     <link rel="stylesheet" type="text/css" href="styling/index.css"></script>
     <link rel="stylesheet" type="text/css" href="styling/skeleton.css"></script>
 
-    <script id="" type="text/x-handlebars-template">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script id="entry-template" type="text/x-handlebars-template">
+      <!-- Helped by Seth's code  -->
+      <article data-author="{{author}}" data-catagory="{{category}}">
+        <h1 class="title">{{title}}</h1>
+        <h4 class="authorDate">By <a href="{{authorUrl}}">{{author}}</a><br>Published {{daysAgo}} days ago.</h4>
+        <div class="bodyText">
+          {{{body}}}
+          <a class="read-on">Read On</a>
+        </div>
+        <h5 class="category">{{category}}</h5>
+      </article>
+    </script>
   </head>
 
   <body>
@@ -26,33 +37,28 @@
         </ul>
 
         <form id="dropdown">
-          <select class="catFilter" id="select-hold">Choose a category</select>
-          <option value="reset" id="category"></option>
-          <select class="autF classilter" id="select-hold">Choose an author</select>
-          <option value="reset" id="authors"></option>
+          <select id="catFilter">Choose a category
+            <option value="reset"></option></select>
+          <select id="autFilter">Choose an author
+            <option value="reset"></option></select=-09871` as 21`
         </form>
       </nav>
     </header>
 
     <main>
-      <article id="template">
-        <h1 class="title"></h1>
-        <h3 class="author"></h3>
-        <h3 class="authorUrl"></h3>
-        <section class="body"></section>
-        <a href="#" class="read-on">Read On</a>
-        <h6 class="publishedOn"></h6>
+      <article class="articles"></div>
       </article>
     </main>
 
   <footer>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-  <script src="js/blog.js"></script>
-  <script src="js/blogArticles.js"></script>
-  <script src="js/article.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/util.js"></script>
-  <script src="js/tabs.js"></script>
+  <script src="scripts/blog.js"></script>
+  <script src="scripts/blogArticles.js"></script>
+  <script src="scripts/article.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/util.js"></script>
+  <script src="scripts/tabs.js"></script>
+  <
 </body>
 </html>

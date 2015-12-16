@@ -1,25 +1,43 @@
 var blog = {};
 blog.articles = [];
 
-//this code is borrowing from class demo/mirandalily
-blog.sortRawData = function() {
+// //1st try this code is borrowing from class demo/mirandalily
+// blog.sortArticles = function() {
+//   blog.rawData.sort(function(a,b) {
+//     if (a.publishedOn > b.publishedOn) {
+//       return -1;
+//     }
+//     if (a.publishedOn < b.publishedOn) {
+//       return 1;
+//     }
+//     return 0;
+//   });
+// };
+
+//method from instructor code
+blog.sortArticles = function() {
   blog.rawData.sort(function(a,b) {
-    if (a.publishedOn > b.publishedOn) {
-      return -1;
-    }
-    if (a.publishedOn < b.publishedOn) {
-      return 1;
-    }
-    return 0;
+    return a.publishedOn < b.publishedOn;
   });
 };
 
-blog.createArticles = function() {
-  for (var i = 0; i < blog.rawData.length; i += 1) {
-    var article = new Article(blog.rawData[i]);
-    blog.articles.push(article);
-    article.toHTML();
-  }
+// 1st try
+// blog.createArticles = function() {
+//   for (var i = 0; i < blog.rawData.length; i += 1) {
+//     var article = new Article(blog.rawData[i]);
+//     blog.articles.push(article);
+//     article.toHTML();
+//   }
+// };
+
+blog.importArticles = function() {
+  blog.rawData.forEach(function(ele) {
+    blog.articles.push(new Article(ele));
+  });
+};
+
+blog.appendArticle = function(a) {
+  $('#articles').append(a.toHtml());
 };
 
 //truncate articles to hide all but first paragraph work from Brook in class
@@ -37,14 +55,26 @@ blog.truncateArticles = function() {
 //create author list dropdown helped by Tiffine and Robert
 blog.createList = function() {
   $('article').each(function() {
-    var list = $(this).find('.authors').text();
-    var option = ('<option value="' + val + '">' + val + '</option>');
-    $('#authors').append(option);
+    //draft code from class
+    if (!$(this).hasClass('draft')) {
+      var list = $(this).find('address a').text();
+      var option = ('<option value="' + val + '">' + val + '</option>');
+      $('#autFilter').append(option);
 
-    list = $(this).find('.category').text();
-    option = '<option value="' + val + '">' + val + '</option>';
-    $('#catetory').append(option);
-});
+      list = $(this).find('.category').text();
+      option = '<option value="' + val + '">' + val + '</option>';
+      if ($('#category option[value=' + val + ']').length === 0) {
+        $('#category').append(option);
+      }
+    }
+  });
+};
+// //code from Seth
+// blog.newArticleLoop = function () {
+//   var newArticle = new Articles(this.rawData[i]);
+//   $('main').append(newArticle.toHTML()
+//   );
+// };
 
 //pair programmed with Robert Hill
 blog.filterAuthList = function(){
