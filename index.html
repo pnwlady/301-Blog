@@ -8,7 +8,7 @@
     <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
     <link rel="stylesheet" type="text/css" href="styling/index.css"></script>
     <link rel="stylesheet" type="text/css" href="styling/icon.css"
-    <link rel="stylesheet" type="text/css" href="styling/skeleton.css"></script>
+    <link rel="stylesheet" type="text/css" href="vendors/styling/skeleton.css"></script>
 
     <script id="entry-template" type="text/x-handlebars-template">
       <!-- Helped by Seth's code  -->
@@ -35,6 +35,12 @@
           <li><a href="http://www.linkedin.com/in/heidi-laursen-33997b91">Linked In</a></li>
           <li><a href="https://twitter.com/pnwlady">Twitter/pnwlady</a></li>
         </ul>
+        <form id="dropdown">
+          <select id="catFilter">Choose a category
+            <option value="reset"></option></select>
+          <select id="autFilter">Choose an author
+            <option value="reset"></option></select>
+        </form>
       </nav>
 
     </header>
@@ -64,12 +70,10 @@
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-  <script src="scripts/util.js"></script>
   <script src="scripts/article.js"></script>
   <script src="scripts/blog.js"></script>
   <script src="scripts/blogArticles.js"></script>
+  <script src="scripts/util.js"></script>
   <script src="scripts/index.js"></script>
-  <script src="vendor/scripts/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

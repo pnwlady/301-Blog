@@ -10,8 +10,9 @@ var Article = function(property) {
 
 //i improved my code by looking the class code
 Article.prototype.toHTML = function () {
-  var source = $('#entry-templage').text();
+  var source = $('#entry-template').text();
   var template = Handlebars.compile(source);
+  this.daysAgo = this.getDate();
   return template(this);
 };
 
