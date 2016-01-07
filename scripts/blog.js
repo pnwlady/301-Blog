@@ -1,26 +1,25 @@
-var blog = {};
+blog = {};
 blog.articles = [];
 
-//this code is borrowing from class demo/mirandalily
-blog.sortRawData = function() {
+//method from instructor code
+blog.sortArticles = function() {
   blog.rawData.sort(function(a,b) {
-    if (a.publishedOn > b.publishedOn) {
-      return -1;
-    }
-    if (a.publishedOn < b.publishedOn) {
-      return 1;
-    }
-    return 0;
+    return a.publishedOn < b.publishedOn;
   });
 };
 
-blog.createArticles = function() {
-  for (var i = 0; i < blog.rawData.length; i += 1) {
-    var article = new Article(blog.rawData[i]);
-    blog.articles.push(article);
-    article.toHTML();
-  }
+blog.importArticles = function() {
+  blog.rawData.forEach(function(article) {
+    var art = new Article(article);
+    blog.articles.push(art);
+  });
 };
+
+blog.appendArticles = function() {
+  this.articles.forEach(function(article){
+    $('#articles').append(article.toHTML());
+  });
+
 
 //truncate articles to hide all but first paragraph work from Brook in class
 blog.truncateArticles = function() {
@@ -34,41 +33,55 @@ blog.truncateArticles = function() {
   });
 };
 
-//create author list dropdown helped by Tiffine and Robert
-blog.createList = function() {
-  $('article').each(function() {
-    var list = $(this).find('.authors').text();
-    var option = ('<option value="' + val + '">' + val + '</option>');
-    $('#authors').append(option);
+//create author list dropdown helped by Tiffine and Robert, made some changes from class code
+// blog.populateFilters = function() {
+//   $('article').each(function() {
+//     //draft code from class
+//     if (!$(this).hasClass('draft')) {
+//       var val = $(this).find('address a').text();
+//       var option = ('<option value="' + val + '">' + val + '</option>');
+//       $('#autFilter').append(option);
+//
+//       list = $(this).data('category').text();
+//       option = '<option value="' + val + '">' + val + '</option>';
+//       if ($('#catFilter option[value=' + val + ']').length === 0) {
+//         $('#catFilter').append(option);
+//       }
+//     }
+//   });
+// };
 
-    list = $(this).find('.category').text();
-    option = '<option value="' + val + '">' + val + '</option>';
-    $('#catetory').append(option);
-});
-
-//pair programmed with Robert Hill
-blog.filterAuthList = function(){
-  $('#authors').on('change', function() {
-    $('main').find('article').attr('selected', true);
-    if($(this).val() !== 'none') {
-      $('main').find('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
+//pair programmed with Robert Hill, ammended looking at class code
+blog.filterAuthList = function() {
+  $('#autFilter').on('change', function() {
+    // $('main').find('article').attr('selected', true);
+    if($(this).val()) {
+      // $('main').find('.author:not(:contains(' + $(this).val() + '))').parents('article').hide();
+      $('article').hide();
     } else {
-      $('main').find('article').show();
-      console.log(this.value);
+      // $('main').find('article').show();
+      $('article').fadeIn();
+      $('article.draft').hide();
     }
-    $('#category').val('');
+    console.log($('#catFilter').val(''));
+    $('#catFilter').val('');
   });
 };
+
 blog.filterCatList = function(){
-  $('#catetory').on('change', function() {
-    $('main').find('article').attr('selected', true);
-    if($(this).val() !== 'none') {
-      $('main').find('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
+  $('#catFilter').on('change', function() {
+    // $('main').find('article').attr('selected', true);
+    if($(this).val()) {
+      $('article').hide();
+      $('article[data-category="' + util.slug($(this).val()) + '"]').fadeIn();
+      // $('main').find('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
     } else {
-      $('main').find('article').show();
-      console.log(this.value);
+      $('article').fadeIn();
+      $('article.draft').hide();
+      // $('main').find('article').show();
+      console.log($('autFilter').val(''));
     }
-    $('#authors').val('');
+    $('#autFilter').val('');
   });
 };
 //navigation control - needs work to be built here
